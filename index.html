@@ -46,7 +46,12 @@
             <div class="u-container-layout u-valign-middle u-container-layout-2">
               <h2 class="u-text u-text-1">About Me</h2>
               <p class="u-text u-text-2">The clumsy sophomore put what he learned to work in March 2022.</p>
-            </div>
+				 <p style="font-size: 16px;color:aqua" ><span id="target">EchoParking</span>
+    <button  data-clipboard-action="copy" data-clipboard-target="#target" id="copy_btn"> 点击复制微信号 </button></p>
+			
+  
+				
+            </div>	
           </div>
         </div>
       </div>
@@ -93,11 +98,25 @@
       </div>
     </div>
   </div>
-</section>
-</body>
+</section></body>
 </html>
-
 <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+<script>    
+    $(document).ready(function(){      
+        var clipboard = new Clipboard('#copy_btn');    
+        clipboard.on('success', function(e) {    
+            alert("微信号复制成功",1500);
+            window.location.href='weixin://';
+            e.clearSelection();    
+            console.log(e.clearSelection);    
+        });    
+    });    
+</script>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
 

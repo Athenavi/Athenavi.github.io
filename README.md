@@ -1,9 +1,8 @@
 # zyBLOG - 一个简易的博客程序
 
 
-## 231009更新
-Linux文章评论验证码无法显示请下载 arial.ttf 》》 https://qks.icu/ttf
-将其放置在程序根目录（与wsgi.py同文件夹）
+## 240119更新
+*项目 [lite](https://github.com/Athenavi/zb) 基于项目 [zyBLOG](https://github.com/Athenavi/zyBLOG) 轻量化版本,支持**vercel**上的部署*
 
 ## 简介
 
@@ -50,7 +49,6 @@ $ python wsgi.py
 ## 鸣谢
 
  https://7trees.cn 提供API支持
- API可参阅 https://qks.icu/apiFox
 
 ## 免责声明
 

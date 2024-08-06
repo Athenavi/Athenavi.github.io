@@ -1,41 +1,52 @@
-# zyBLOG - 一个简易的博客程序
+<div align="center">
+	<img src="https://7trees.cn/static/favicon.ico" width="160" />
+	<h1>zyblog</h1>
+</div>
 
-**此项目的另一分支 [lite](https://github.com/Athenavi/zb/tree/lite) 现已支持*vercel*,无需繁琐配置**
 
-*此项目 [zb](https://github.com/Athenavi/zb) 基于项目 [zyBLOG](https://github.com/Athenavi/zyBLOG) 更新优化，以提升过去版本的安全性和响应速度*
 
-## 简介
+> [!NOTE]
+> 如果您觉得 `zyblog`对您有所帮助，或者您喜欢我们的项目，请在 GitHub 上给我们一个 ⭐️。您的支持是我们持续改进和增加新功能的动力！感谢您的支持！
+
+
+- [click here](https://github.com/Athenavi/zb)
+
+
+- **更新日志**
+  - [详情](https://github.com/Athenavi/zb/update.txt)
+  - [旧版](https://github.com/Athenavi/zyBLOG)
+
+
+## 预览
+
+- [地址](https://7trees.cn)
 
 [zyBLOG](https://github.com/Athenavi/zyBLOG) 是一个基于 Python Flask 和 WSGI 的简易博客程序
 
-（以下demo网址非最新特性）
-demo https://237127.xyz
+## 技术组成
+
+- **Python Flask**: 作为 Web 框架，提供了构建网页应用的基础功能。
+- **WSGI**: 作为 Python Web 应用程序与 Web 服务器之间的接口标准，实现了 Web 应用程序与服务器之间的通信。
+- **HTML/CSS**: 用于构建博客界面的前端技术。
+- **MySQL**: 作为数据库，用于存储用户、~~文章评论~~等数据。
 
 ## 功能特点
-
-<details>
-<summary>TODO List</summary>
 
 
 - [x] 提供文章分类和标签功能，方便用户组织和浏览文章。
 - [x] 界面适应手机 
-- [x] SEO优化
+- [x] ~~SEO优化~~(自完全使用前端渲染之后,SEO功能可谓是完全丧失了)
 - [x] 支持创建、编辑和删除博客文章。
 - [x] 提供评论功能，让用户可以与其他用户进行交流和互动。
 - [x] 用户可以注册和登录，以便管理他们的博客文章。
 - [x] 博客文章可以包含图片、视频和代码片段。
 - [x] 支持搜索功能，使用户可以快速找到感兴趣的文章。 
 
-</details>
 
-## 技术组成
 
-zyBLOG 使用以下技术组成：
+## 示例图片
 
-- **Python Flask**: 作为 Web 框架，提供了构建网页应用的基础功能。
-- **WSGI**: 作为 Python Web 应用程序与 Web 服务器之间的接口标准，实现了 Web 应用程序与服务器之间的通信。
-- **HTML/CSS**: 用于构建博客界面的前端技术。
-- **MySQL**: 作为数据库，用于存储用户、文章评论等数据。
+![](https://7trees.cn/zyImg/test/ac2764bba0b08d79e8f4bb1ba0d57a59.png)
 
 ## 如何运行
 
@@ -106,11 +117,92 @@ $ source myenv/bin/activate
 
 现在你可以在虚拟环境下重新安装依赖以及启动程序
 
-## 鸣谢
 
- 由 https://7trees.cn 提供API支持
 
- API可参阅 https://7trees.cn 菜单选项 API
+## 仍然无法运行？
+
+如果你了解docker，可以尝试使用Dockerfile来部署运行
+
+## 评论（240319）
+
+   新版本的评论：
+   由 ```utteranc``` 提供技术支持
+
+   不使用当前提供的评论issue地址？
+   你需要修改```templates/detail.html```文件
+   找到如下代码,修改其中的```repo```为你的github项目地址
+
+   ```
+<script src="https://utteranc.es/client.js"
+                 repo="Athenavi/comments"
+                 issue-term="url"
+                 {% if theme=="night-theme" %}
+                 theme="github-dark"
+                 {% else %}
+                 theme="github-light"
+                 {% endif %}
+                 crossorigin="anonymous"
+                 async>
+         </script>
+   ```
+
+### ！！！注意 在完成之间你可能还需```授权```将 utteranc 应用添加到 github 账户中
+
+更多细节请查阅官方文档: [https://utteranc.es/](https://utteranc.es/)
+
+## 评论（240319）
+
+   新版本的评论：
+   由 ```utteranc``` 提供技术支持
+
+   不使用当前提供的评论issue地址？
+   你需要修改```templates/detail.html```文件
+   找到如下代码,修改其中的```repo```为你的github项目地址
+
+   ```
+<script src="https://utteranc.es/client.js"
+                 repo="Athenavi/comments"
+                 issue-term="url"
+                 {% if theme=="night-theme" %}
+                 theme="github-dark"
+                 {% else %}
+                 theme="github-light"
+                 {% endif %}
+                 crossorigin="anonymous"
+                 async>
+         </script>
+   ```
+
+### ！！！注意 在完成之间你可能还需```授权```将 utteranc 应用添加到 github 账户中
+
+更多细节请查阅官方文档: [https://utteranc.es/](https://utteranc.es/)
+
+我们热烈欢迎并感谢所有形式的贡献。如果您有任何想法或建议，欢迎通过提交 [pull requests](https://github.com/soybeanjs/soybean-admin/pulls) 或创建 GitHub [issue](https://github.com/soybeanjs/soybean-admin/issues/new) 来分享。
+
+
+
+
+## 
+
+
+## 开源贡献者
+
+感谢以下各位的贡献
+
+<img src="https://contrib.rocks/image?repo=Athenavi/zb" />
+
+## 交流
+
+暂无开放
+
+
+## Star 趋势
+
+![Star History Chart](https://api.star-history.com/svg?repos=Athenavi/zb&type=Date)
+
+## 开源协议
+
+项目基于 [Apache V2.0](./LICENSE) 协议，仅供学习参考，商业使用请保留作者版权信息，作者不保证也不承担任何软件的使用风险。
 
 ## 免责声明
 
@@ -179,27 +271,3 @@ screenshot = 'screenshot.png'
 ```
 
 `当至少我们拥有这三个文件之后 刷新我们的程序 那么新的模板 就会出现在后台模板中`
-
-## API 接口
-
-### 获取城市代码
-
-接口信息：
-访问路径： `/api/get_city_code`
-
-请求参数：`city_name`
-
-| 参数名称  | 数据类型 | 是否必须 | 提交方式 | 描述     |
-| --------- | -------- | -------- | -------- | -------- |
-| city_name | str      | 是       | post/get | 城市名称 |
-
-请求示例
- /api/get_city_code?city_name=北京
-
-### 获取城市天气信息
-
-接口信息：
-访问路径：`/api/weather/<city_code>`
-
-在上述接口的基础上可以得到城市代码，然后获取城市代码天气信息
-

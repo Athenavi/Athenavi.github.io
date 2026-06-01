@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>atheanvi</title>
+    <title>Atheanvi</title>
     <!-- HTMX -->
     <script crossorigin="anonymous"
             integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
@@ -159,7 +159,7 @@
                 <div class="w-9 h-9 bg-neutral-900 dark:bg-white rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
                     <span class="text-white dark:text-neutral-900 font-bold text-lg">M</span>
                 </div>
-                <span class="text-lg font-semibold tracking-tight hidden sm:block">atheanvi</span>
+                <span class="text-lg font-semibold tracking-tight hidden sm:block">Atheanvi</span>
             </a>
 
             <!-- 桌面端导航 -->
@@ -350,6 +350,71 @@ MiMo-V2.5-Pro 的最终定价——缓存命中 **0.025 元**、未命中 **3 �
                 prose-hr:border-neutral-200 dark:prose-hr:border-neutral-800">
             </div>
 
+            <!-- Giscus 评论区 -->
+            
+            <div class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+                <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-6 flex items-center gap-2">
+                    <i class="fas fa-comments text-neutral-400 dark:text-neutral-500"></i>
+                    评论
+                </h3>
+                <div id="giscus-container" class="giscus"></div>
+            </div>
+            <script>
+            (function() {
+                // 根据当前主题设置 giscus 主题
+                function getGiscusTheme() {
+                    var giscusTheme = 'preferred_color_scheme';
+                    if (giscusTheme === 'preferred_color_scheme') {
+                        return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                    }
+                    return giscusTheme;
+                }
+
+                function loadGiscus() {
+                    var container = document.getElementById('giscus-container');
+                    if (!container) return;
+                    // 清除已有内容
+                    container.innerHTML = '';
+
+                    var script = document.createElement('script');
+                    script.src = 'https://giscus.app/client.js';
+                    script.setAttribute('data-repo', 'Athenavi/Athenavi.github.io');
+                    script.setAttribute('data-repo-id', 'R_kgDOOucRZQ');
+                    script.setAttribute('data-category', 'General');
+                    script.setAttribute('data-category-id', 'DIC_kwDOOucRZc4C-Qp3');
+                    script.setAttribute('data-mapping', 'pathname');
+                    script.setAttribute('data-reactions-enabled', '1');
+                    script.setAttribute('data-emit-metadata', '0');
+                    script.setAttribute('data-input-position', 'bottom');
+                    script.setAttribute('data-theme', getGiscusTheme());
+                    script.setAttribute('data-lang', 'zh-CN');
+                    script.setAttribute('crossorigin', 'anonymous');
+                    script.async = true;
+                    container.appendChild(script);
+                }
+
+                // 初始加载
+                loadGiscus();
+
+                // 监听主题切换，重新加载 giscus 以适配新主题
+                var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.attributeName === 'class') {
+                            var iframe = document.querySelector('iframe.giscus-frame');
+                            if (iframe) {
+                                iframe.contentWindow.postMessage(
+                                    { giscus: { setConfig: { theme: getGiscusTheme() } } },
+                                    'https://giscus.app'
+                                );
+                            }
+                        }
+                    });
+                });
+                observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+            })();
+            </script>
+            
+
             <!-- 管理员操作 -->
             
         </article>
@@ -495,7 +560,7 @@ MiMo-V2.5-Pro 的最终定价——缓存命中 **0.025 元**、未命中 **3 �
             </div>
         </div>
         <div class="mt-6 pt-6 border-t border-neutral-100 dark:border-neutral-800 text-center text-xs text-neutral-400 dark:text-neutral-600">
-            &copy;  atheanvi
+            &copy;  Atheanvi
         </div>
     </div>
 </footer>

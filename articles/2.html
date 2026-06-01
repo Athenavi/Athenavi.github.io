@@ -230,330 +230,207 @@
             <header class="mb-10">
                 
                 <h1 class="text-3xl sm:text-4xl font-bold text-neutral-900 dark:text-white leading-tight tracking-tight">
-                    fast_blog
+                    Hello Markdown
                 </h1>
                 <div class="mt-4 flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400">
                     <span class="inline-flex items-center gap-1.5">
                         <i class="far fa-calendar text-neutral-400 dark:text-neutral-500"></i>
-                        <time>2026年06月01日</time>
+                        <time>2026年05月26日</time>
                     </span>
                     
                     <span class="inline-flex items-center gap-1.5">
                         <i class="far fa-edit text-neutral-400 dark:text-neutral-500"></i>
-                        <time>更新于 2026年06月01日</time>
+                        <time>更新于 2026年05月26日</time>
                     </span>
                     
                 </div>
             </header>
 
             <!-- 文章正文 -->
-            <div id="markdown-content" class="hidden"><div align="center">
+            <div id="markdown-content" class="hidden"># MarkLume
 
-# FastBlog
+**极简 · 快速 · 一键部署的个人 Markdown 博客**
 
-### ⚡ 面向开发者的现代化高性能博客平台
+![Python](https://img.shields.io/badge/python-3.13%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-[![CI Status](https://github.com/Athenavi/fast_blog/actions/workflows/ci.yml/badge.svg)](https://github.com/Athenavi/fast_blog/actions/workflows/ci.yml)
-[![Release](https://github.com/Athenavi/fast_blog/actions/workflows/release.yml/badge.svg)](https://github.com/Athenavi/fast_blog/actions/workflows/release.yml)
-[![Python Version](https://img.shields.io/badge/python-3.11+-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Astro](https://img.shields.io/badge/Astro-5.x-BC52EE.svg?logo=astro&logoColor=white)](https://astro.build/)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/Athenavi/fast_blog?style=social)](https://github.com/Athenavi/fast_blog/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/Athenavi/fast_blog?style=social)](https://github.com/Athenavi/fast_blog/network/members)
-[![Docker](https://img.shields.io/badge/docker-ready-blue?logo=docker&logoColor=white)](https://github.com/Athenavi/fast_blog/pkgs/container/fastblog)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Athenavi/fast_blog/blob/main/CONTRIBUTING.md)
+> 轻如羽毛，快如闪电。
 
-[🚀 快速开始](#-快速开始) · [📖 文档](#-文档) · [🎯 特性](#-特性) · [🗺️ 路线图](#%EF%B8%8F-路线图) · [🤝 参与贡献](#-参与贡献)
+> 所有文章以 Markdown 文件存储，零数据库依赖，只需一个 Python 环境即可运行。
 
-</div>
+> 提供本地动态写作界面，更支持**一键生成静态站点并推送至 GitHub Pages**，几分钟拥有个人博客。
 
 ---
 
-## ✨ 为什么选择 FastBlog？
+## ✨ 为什么选择 MarkLume？
 
-FastBlog 是一个**新一代博客平台**，将 **FastAPI** 的极致性能与 **Astro** 的现代前端架构完美结合。专为追求性能、可扩展性和开发体验的开发者打造。
-
-| 特性        | FastBlog | WordPress | Ghost | Strapi |
-|-----------|----------|-----------|-------|--------|
-| API 优先    | ✅        | ❌         | ✅     | ✅      |
-| 静态生成      | ✅        | ❌         | ❌     | ❌      |
-| 插件系统      | ✅        | ✅         | ❌     | ✅      |
-| 双后端架构     | ✅        | ❌         | ❌     | ❌      |
-| 零 JS 前端   | ✅        | ❌         | ❌     | ❌      |
-| Docker 支持 | ✅        | ✅         | ✅     | ✅      |
+- **纯文本，永久可读** – 每篇文章就是一个 `.md` 文件，用任何编辑器都能打开。
+- **零数据库，迁移简单** – 备份只需拷贝 `archive` 目录。
+- **本地动态管理** – 基于 FastAPI 的极简后台，支持在线编写、编辑、删除文章。
+- **一键 GitHub Pages 部署** – 无需手动配置 Actions，填写 Token 即可自动推送至 `你的用户名.github.io` 仓库。
+- **轻量无侵入** – 单个命令启动，无需 Docker，非常适合个人 VPS 或本地使用。
 
 ---
 
-## 🎯 特性
+## 📦 快速开始
 
-### 🚀 极致性能
+### 环境要求
+- Python 3.13 或更高版本
+- Git（用于部署）
 
-- **Astro 岛屿架构** — 默认零 JavaScript，首屏加载速度提升 80%+
-- **全异步** — FastAPI + asyncpg 非阻塞数据库操作
-- **智能缓存** — 多层 Redis 缓存 + 智能失效机制
-- **CDN 友好** — 静态资源优化 + 缓存头配置
-
-### 🔌 可扩展
-
-- **插件系统** — Hook 机制，无需修改核心代码即可扩展
-- **主题引擎** — 基于 Jinja2 的热插拔主题系统
-- **RESTful API** — 完整 API + 自动生成 Swagger/ReDoc 文档
-- **Python SDK** — 编程式访问接口
-
-### 🔒 企业级安全
-
-- **JWT + OAuth2** — 安全认证 + 刷新令牌 + 双因素认证 (TOTP)
-- **角色权限** — 细粒度的基于能力的权限管理系统
-- **审计日志** — 追踪所有敏感操作
-- **速率限制** — 可配置的端点级限流
-
-### 📱 现代化体验
-
-- **响应式设计** — 完美适配桌面、平板、手机
-- **深色模式** — 跟随系统主题自动切换
-- **SEO 优化** — 自动生成 Sitemap、Meta 标签、结构化数据
-- **PWA 支持** — 可安装为原生应用
-
-### 🛠️ 开发者体验
-
-- **双后端** — FastAPI（异步高性能）和 Django（成熟稳定）灵活切换
-- **热重载** — 开发时即时反馈
-- **CLI 工具** — 强大的命令行管理工具
-- **类型安全** — 全代码库类型注解
-
----
-
-## 🏗️ 系统架构
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        Nginx / CDN                          │
-├────────────────────────┬────────────────────────────────────┤
-│    Astro 前端           │         FastAPI 后端               │
-│   (静态/SSR/ISR)       │    (异步 REST API 服务器)          │
-│                        │                                    │
-│  ┌──────────────┐      │  ┌───────────┐  ┌──────────────┐  │
-│  │  React/Vue   │      │  │  路由层    │  │   中间件     │  │
-│  │  岛屿组件    │      │  └─────┬─────┘  └──────────────┘  │
-│  └──────────────┘      │        │                          │
-│                        │  ┌─────▼─────┐  ┌──────────────┐  │
-│  ┌──────────────┐      │  │  服务层    │  │  插件钩子    │  │
-│  │  TailwindCSS │      │  └─────┬─────┘  └──────────────┘  │
-│  └──────────────┘      │        │                          │
-│                        │  ┌─────▼─────┐  ┌──────────────┐  │
-│                        │  │  模型层    │  │   缓存层     │  │
-│                        │  │(SQLAlchemy)│  │   (Redis)    │  │
-│                        │  └─────┬─────┘  └──────────────┘  │
-│                        │        │                          │
-│                        │  ┌─────▼─────┐                    │
-│                        │  │PostgreSQL │                    │
-│                        │  └───────────┘                    │
-├────────────────────────┴────────────────────────────────────┤
-│                    共享模型 & 工具库                          │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 📦 技术栈
-
-<table>
-<tr>
-<td valign="top" width="50%">
-
-**后端**
-
-- [FastAPI](https://fastapi.tiangolo.com/) — 异步 Web 框架
-- [SQLAlchemy](https://www.sqlalchemy.org/) — ORM 数据库工具
-- [PostgreSQL](https://www.postgresql.org/) — 主数据库
-- [Redis](https://redis.io/) — 缓存 & 会话存储
-- [Alembic](https://alembic.sqlalchemy.org/) — 数据库迁移
-- [Uvicorn](https://www.uvicorn.org/) — ASGI 服务器
-
-</td>
-<td valign="top" width="50%">
-
-**前端**
-
-- [Astro](https://astro.build/) — 静态站点生成器
-- [React](https://react.dev/) / [Vue](https://vuejs.org/) — UI 组件
-- [TailwindCSS](https://tailwindcss.com/) — 工具优先 CSS
-- [TypeScript](https://www.typescriptlang.org/) — 类型安全
-- [SWR](https://swr.vercel.app/) — 数据获取
-
-</td>
-</tr>
-</table>
-
----
-
-## 🚀 快速开始
-
-### Docker 一键部署（推荐）
+### 安装与启动
 
 ```bash
-git clone https://github.com/Athenavi/fast_blog.git
-cd fast_blog
-cp .env_example .env
-# 编辑 .env 配置数据库等信息
+# 1. 克隆仓库
+git clone https://github.com/athenavi/marklume.git
+cd marklume
 
-docker-compose up -d
-```
+# 2. 创建虚拟环境（推荐）
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
-访问 `http://localhost:4321` 查看前端，`http://localhost:9421/docs` 查看 API 文档。
-
-### 手动安装
-
-<details>
-<summary><b>前置要求</b></summary>
-
-- Python 3.11+
-- Node.js 18+
-- PostgreSQL 14+
-- Redis 7+（可选，用于缓存）
-
-</details>
-
-```bash
-# 1. 克隆 & 设置后端
-git clone https://github.com/Athenavi/fast_blog.git
-cd fast_blog
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-# venv\Scripts\activate   # Windows
+# 3. 安装依赖
 pip install -r requirements.txt
 
-# 2. 配置环境
-cp .env_example .env
-# 编辑 .env 文件
+# 4. 启动本地服务
+uvicorn backend.main:app --reload
+```
 
-# 3. 运行数据库迁移
-alembic upgrade head
+访问 `http://localhost:8000` 即可看到你的博客。  
+第一次启动会自动创建 `archive/` 目录，并在项目根目录生成 `admin_key.txt`（管理员密钥）。
 
-# 4. 启动后端
-python main.py --backend fastapi
+---
 
-# 5. 设置前端（新终端）
-cd frontend-astro
-npm install
-npm run dev
+## ⚙️ 配置
+
+### 1. 管理员密钥
+- 启动后自动生成 `admin_key.txt`，其中包含一串随机字符串。
+- 访问 `/admin/key`，输入该密钥即可登录管理后台（Cookie 有效期 10 年）。
+- 如需重置，删除 `admin_key.txt` 后重启服务即可。
+
+### 2. 站点信息
+在项目根目录创建 `config.ini`（可选），自定义站点标题和链接：
+```ini
+[site]
+site_name = 我的技术笔记
+site_link = https://myblog.github.io
+```
+
+### 3. GitHub Token（部署专用）
+部署功能需要 GitHub Personal Access Token。获取方式：
+- 登录 GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
+- 点击 **Generate new token (classic)**，勾选 `repo` 全部权限，生成后复制保存。
+
+---
+
+## 📝 本地使用指南
+
+### 前台阅读
+- 首页展示文章列表，点击标题阅读全文。
+
+### 后台管理
+- 访问 `/admin/key` 输入管理员密钥登录。
+- 登录后，导航栏出现“新建文章”按钮，文章页出现“编辑”和“删除”按钮。
+- 支持 Markdown 语法实时预览（前端由模板渲染，可自行扩展编辑器）。
+- **上传 Markdown 文件**：在新建文章页面，可直接上传本地 `.md` 文件，系统自动以文件名作为标题创建文章。
+
+### 文章存储
+所有文章保存在 `archive/` 目录下，每篇文章一个 `.md` 文件：
+```
+archive/
+  ├── getting-started.md
+  ├── advanced-features.md
+  └── migration-guide.md
+```
+文件名即为文章标题（自动处理特殊字符）。
+
+---
+
+## 🚀 一键部署到 GitHub Pages
+
+> 仅支持部署到 `你的用户名.github.io` 仓库（例如 `athenavi.github.io`）。部署将强制覆盖该仓库 `main` 分支的全部内容！
+
+### 步骤
+1. 确保本地已经运行了 MarkLume（`uvicorn backend.main:app`）。
+2. 访问 `http://localhost:8000/deploy`。
+3. 填写站点标题（将显示在博客头部）和你的 GitHub Token。
+4. 点击“开始部署”，等待状态提示完成。
+5. 几分钟后访问 `https://你的用户名.github.io` 即可看到你的个人博客。
+
+**部署过程自动完成**：
+- 从 Token 获取你的 GitHub 用户名。
+- 生成包含所有文章和静态资源的网站。
+- 创建/覆盖 `用户名.github.io` 仓库（公开）。
+- 推送至 `main` 分支，GitHub Pages 自动生效。
+
+**注意**：
+- Token 仅用于本次部署，不会保存在服务器上。
+- 如需更新博客，只需在本地修改/新增文章，然后再次执行部署即可。
+
+---
+
+## 📂 项目结构
+
+```
+marklume/
+├── archive/                 # 文章存档（.md 文件）
+├── backend/
+│   ├── main.py              # FastAPI 应用入口
+│   ├── database.py          # 文章存取与缓存逻辑
+│   ├── models.py            # 数据模型
+│   └── deploy_utils.py      # 静态站点生成与 GitHub 推送
+├── frontend/
+│   ├── static/              # CSS、JS 等静态资源
+│   └── templates/           # Jinja2 模板
+├── build.py                 # 独立静态站点生成脚本（可单独使用）
+├── admin_key.txt            # 管理员密钥（自动生成）
+├── config.ini               # 可选站点配置
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-## 📖 文档
+## 💻 命令行部署（可选）
 
-| 文档                                       | 说明             |
-|------------------------------------------|----------------|
-| [快速开始](docs/QUICK_START.md)              | 安装和配置指南        |
-| [技术架构](docs/TECHNICAL.md)                | 系统设计与决策        |
-| [API 参考](docs/API_REFERENCE.md)          | 完整 REST API 文档 |
-| [插件开发](docs/PLUGIN_DEVELOPMENT_GUIDE.md) | 开发自定义插件        |
-| [主题开发](docs/THEME_DEVELOPMENT_GUIDE.md)  | 创建自定义主题        |
-| [部署指南](docs/DEPLOYMENT_GUIDE.md)         | 生产环境部署         |
-| [故障排查](docs/TROUBLESHOOTING_FAQ.md)      | 常见问题解答         |
-| [更新日志](CHANGELOG.md)                     | 版本历史           |
-| [安全策略](SECURITY.md)                      | 漏洞报告           |
+除了 Web 界面，你也可以直接用命令行生成并部署：
+
+```bash
+python deploy_cli.py --title "我的博客" --token ghp_xxxxxxxxxxxx
+```
 
 ---
 
-## 📊 性能对比
+## 🤝 贡献
 
-基于包含 1000 篇文章的博客进行测试：
+欢迎提交 Issue 和 Pull Request！  
+建议先开 Issue 讨论你的想法，避免重复工作。
 
-| 指标            | FastBlog (Astro) | 典型 SSR | 提升      |
-|---------------|------------------|--------|---------|
-| 首次内容绘制        | **~0.5s**        | ~1.5s  | ⬇️ 67%  |
-| 最大内容绘制        | **~0.8s**        | ~2.5s  | ⬇️ 68%  |
-| 可交互时间         | **~0.5s**        | ~3.0s  | ⬇️ 83%  |
-| 首页 JS 大小      | **~0KB**         | ~250KB | ⬇️ 100% |
-| Lighthouse 分数 | **98-100**       | 60-80  | ⬆️ 25%+ |
-
----
-
-## 🗺️ 路线图
-
-### ✅ 已完成
-
-- [x] FastAPI + Django 双后端架构
-- [x] Astro 前端（岛屿架构）
-- [x] 插件系统（Hook 机制）
-- [x] 主题引擎（热重载）
-- [x] RESTful API（自动文档）
-- [x] JWT 认证 + 双因素认证
-- [x] 文章管理系统
-- [x] 评论系统
-- [x] 媒体管理
-- [x] 全文搜索（Meilisearch）
-- [x] SEO 优化工具集
-- [x] Docker 部署支持
-
-### 🚧 进行中
-
-- [ ] PWA 支持
-- [ ] 国际化（i18n）
-- [ ] 实时通知系统
-- [ ] 数据分析仪表板
-
-### 📅 计划中
-
-- [ ] GraphQL API
-- [ ] WebSocket 实时协作
-- [ ] AI 辅助写作
-- [ ] 多租户支持
-
-查看 [开放 Issues](https://github.com/Athenavi/fast_blog/issues) 获取完整的功能列表和已知问题。
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交更改 (`git commit -m 'Add some amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 发起 Pull Request
 
 ---
 
-## 🤝 参与贡献
+## 📜 许可证
 
-我们欢迎各种形式的贡献！无论是修复错别字、添加功能还是改进文档，每一份贡献都很重要。
-
-**快捷链接：**
-
-- 🐛 [报告 Bug](https://github.com/Athenavi/fast_blog/issues/new?template=bug_report.md)
-- 💡 [功能建议](https://github.com/Athenavi/fast_blog/issues/new?template=feature_request.md)
-- 💬 [社区讨论](https://github.com/Athenavi/fast_blog/discussions)
-- 📖 [贡献指南](CONTRIBUTING.md)
-
-请在贡献前阅读 [贡献指南](CONTRIBUTING.md) 和 [行为准则](CODE_OF_CONDUCT.md)。
-
----
-
-## 🌟 贡献者
-
-<a href="https://github.com/Athenavi/fast_blog/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Athenavi/fast_blog" alt="贡献者" />
-</a>
-
----
-
-## 📄 开源协议
-
-本项目采用 [Apache License 2.0](LICENSE) 开源协议。
+基于 MIT 许可证开源。你可以自由使用、修改和分发本项目，但需保留原作者署名。
 
 ---
 
 ## 🙏 致谢
 
-- [FastAPI](https://fastapi.tiangolo.com/) — 优秀的异步 Web 框架
-- [Astro](https://astro.build/) — 现代化静态站点构建工具
-- [SQLAlchemy](https://www.sqlalchemy.org/) — Python SQL 工具包
-- 所有 [贡献者](https://github.com/Athenavi/fast_blog/graphs/contributors)
+MarkLume 的设计灵感来源于以下项目：
+- [Docsify](https://docsify.js.org/) – 动态文档生成
+- [htmx](https://htmx.org/) – 轻量前端交互理念
+- [Jekyll](https://jekyllrb.com/) – 静态网站生成先驱
 
 ---
 
-<div align="center">
-
-**如果 FastBlog 对你有帮助，请在 GitHub 上给我们一个 ⭐！**
-
-Made with ❤️ by FastBlog Team
-
-[⬆ 回到顶部](#fastblog)
-
-</div></div>
+> **MarkLume** © 2025 Athenavi  
+> 用最简单的工具，写下最认真的思考。</div>
             <div id="article-body" class="prose prose-neutral dark:prose-invert max-w-none
                 prose-headings:font-semibold prose-headings:tracking-tight
                 prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4

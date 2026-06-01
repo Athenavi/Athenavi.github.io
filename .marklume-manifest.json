@@ -1,21 +1,31 @@
 {
   "version": "1.0",
-  "generated_at": "2026-05-28T13:04:45.153765",
+  "generated_at": "2026-06-01T16:29:09.087755",
   "files": {
     "index.html": {
-      "hash": "38abc0da8b20169f0a0d296e93164c0a0880ca92d7178633bf430d24c21343cc",
-      "size": 27357,
-      "mtime": 1779944685.1481528
+      "hash": "202f434139bce09b16aef3e2f8297125efb5ba1a4bd36fbaf198b026c5b00f14",
+      "size": 30481,
+      "mtime": 1780302549.0804954
     },
     "articles/1.html": {
-      "hash": "edc5ecb61ad825d15d0b63b0f898ac54c5ddff83294993894cff8b007a2cd61c",
-      "size": 30651,
-      "mtime": 1779944685.1521525
+      "hash": "15d5347c7fe9549151299929b5862a1faacdb7759fdae015e76c3d0552e3d762",
+      "size": 39974,
+      "mtime": 1780302549.0854952
+    },
+    "articles/2.html": {
+      "hash": "ad2bedecaf02c5c350b81f1dffde44b9e0a253756bc182092ec2325ecb4ec3f0",
+      "size": 33940,
+      "mtime": 1780302549.0854952
     },
     "pages/html-anything-1779937642261.html": {
       "hash": "5c5c3936599262315b2299be697ee830666c12faec46f36106afaa285254c175",
       "size": 23559,
       "mtime": 1779937642.263849
+    },
+    "pages/html-anything-1780302446933.html": {
+      "hash": "e90d54ffc1caee4f67c53e591269feae170a2330f120175fcc67a1d44c4a717b",
+      "size": 41060,
+      "mtime": 1780302446.9359124
     },
     "static/htmx.min.js": {
       "hash": "b6768eed4f3af85b73a75054701bd60e17cac718aef2b7f6b254e5e0e2045616",
@@ -27,10 +37,10 @@
       "size": 1677,
       "mtime": 1779697822.6234071
     },
-    "cate/tech/2.html": {
-      "hash": "cd06d74b4d9e7fa727f55c708100ae86f40e0afaf1c4d202f28aebae0158abf1",
-      "size": 29024,
-      "mtime": 1779944685.153308
+    "cate/tech/3.html": {
+      "hash": "42502a39cd1c5eb43e745c8a7ded24fabcd704a86f76af7a968d801ae77b6648",
+      "size": 32313,
+      "mtime": 1780302549.086725
     }
   }
 }
